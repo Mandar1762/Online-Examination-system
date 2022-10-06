@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% load widget_tweaks %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    {% include "exam/navbar.html" %}
+    <section class="vh-100">
+  <div class="container-fluid h-custom">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-9 col-lg-6 col-xl-5">
+        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+          class="img-fluid" alt="Sample image">
+      </div>
+      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1 mt-4">
+        <form method="post">
+             {% csrf_token %}
+            <h2>Admin Login</h2>
+          <div class="form-outline mb-4 mt-4">
+            <label class="form-label" for="form3Example3">Username:</label>
+            {% render_field form.username class="form-control" placeholder="Username" %}
+          <div class="form-outline mb-3">
+            <label class="form-label" for="form3Example4">Password</label>
+            {% render_field form.password class="form-control" placeholder="Password" %}
+          </div>
+          <div class="text-center text-lg-start mt-4 pt-2">
+            <button type="submit" class="btn btn-outline-primary"
+              style="padding-left: 2.5rem; padding-right: 2.5rem; border-width: 3px ; border-color:cornflowerblue">Login</button>
+            <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="/signup/"
+                class="link-danger">Register</a></p>
+          </div>
+      </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+{% include "exam/footer.html" %}
+  </body>
+</html>
